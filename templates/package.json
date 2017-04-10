@@ -1,0 +1,18 @@
+{
+  "name": "templates",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "jekyll:serve": "jekyll serve",
+    "browsersync": "browser-sync start --config bs-config.js",
+    "start": "concurrently \"npm run jekyll:serve\" \"npm run browsersync\" ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "concurrently": "^3.4.0"
+  }
+}

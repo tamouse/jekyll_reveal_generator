@@ -1,0 +1,19 @@
+title: my slide show
+subtitle: "it's a real bonza"
+author:
+  name: Tamara Temple
+  email: tamara@tamouse.org
+  github: tamouse
+  twitter: tamouse
+
+collections:
+  - slides
+
+exclude:
+  - bs-config.js
+  - package.json
+  - node_modules
+
+kramdown:
+  parse_block_html: true
+  parse_span_html: true

@@ -1,0 +1,39 @@
+---
+layout: slide
+---
+
+<section>
+
+  <h4>here's some inline code:</h4>
+
+  <p>
+    Mauris ultrices eros, in <code>cursus</code> turpis massa
+    tincidunt dui ut ornare lectus? <code>Vitae turpis massa</code>
+    sed elementum tempus egestas sed sed risus pretium quam vulputate
+    dignissim suspendisse in est ante?
+  </p>
+
+</section>
+
+
+
+<section>
+
+<h4>minimal contents for <code>bs-config.js</code></h4>
+
+<pre><code data-trim data-noescape class="javascript">module.exports = {
+    "ui": {
+        "port": 7001,
+        "weinre": {
+            "port": 8080
+        }
+    },
+    "files": [
+	<mark>'./_site/**/*'</mark>
+    ],
+    "server": './_site',
+    "port": 7000
+};</code></pre>
+
+
+</section>

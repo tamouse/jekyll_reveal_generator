@@ -1,0 +1,20 @@
+---
+---
+/* The printed styles are dependent on bootstrap
+
+/* make some space at the bottom of each slide and sub-slide
+.container > section
+  margin-bottom: 80px
+  border-bottom: 2px solid #666
+  & > section
+    margin-bottom: 40px
+
+/* do the clearfix on each section within the slides container
+.container section:after
+  content: ""
+  display: table
+  clear: both
+
+/* speaker notes as real asides
+aside.notes
+  float: right

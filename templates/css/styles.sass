@@ -1,0 +1,46 @@
+---
+---
+
+$blue: #2196f3
+$gold: #e7ad52
+$green: #7CB342
+
+$banner_fg: #333
+$banner_bg: #CCC
+$controls_bg: aliceblue
+$hljs_default: #dcdcdc
+$header_text_shadow_color: #840b0b
+$header_text_shadow_offset: 5px
+
+.reveal
+  code
+    color: $green
+    &.hljs
+      color: $hljs_default
+  h1,h2,h3,h4,h5,h6
+    text-shadow: $header_text_shadow_offset $header_text_shadow_offset $header_text_shadow_offset $header_text_shadow_color
+  .slide-header,.slide-footer
+    width: 100%
+    text-align: center
+    color: $banner_fg
+    background-color: $banner_bg
+    height: 50px
+    padding: 5px
+    position: absolute
+    left: 0
+  .slide-header
+    top: 0
+  .slide-footer
+    bottom: 0
+  .slide-number
+    bottom: inherit
+    top: 8px
+  .controls
+    background-color: $controls_bg
+
+  .blue
+    color: $blue
+  .gold
+    color: $gold
+  .green
+    color: $green
