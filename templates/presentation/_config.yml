@@ -1,0 +1,9 @@
+# Jekyll configuration file
+source: source
+destination: build
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  parse_block_html: true
+  parse_span_html: true

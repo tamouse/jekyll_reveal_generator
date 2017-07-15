@@ -1,0 +1,5 @@
+
+desc "Run the jekyll development server"
+task :serve do |t|
+  sh 'bundle exec jekyll serve --config=_config.yml'
+end

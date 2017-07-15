@@ -8,3 +8,7 @@ Rake::TestTask.new(:test) do |t|
 end
 
 task :default => :test
+
+task :serve do |t|
+  sh 'bundle exec jekyll serve'
+end
