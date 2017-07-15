@@ -29,7 +29,8 @@ module JekyllRevealGenerator
           },
           publishing: {
             site_url: '',
-            base_url: ''
+            base_url: '',
+            destination: 'docs'
           }
         }
           .merge({"folder" => folder})
@@ -50,8 +51,7 @@ module JekyllRevealGenerator
       self.init_options.venue.password = ask("What is the network password? ", default: "T.B.D.")
       self.init_options.publishing.site_url = ask("What is the published site url?")
       self.init_options.publishing.base_url = ask("What is the base URL for the published site?")
-
-      $logger.debug("Init Options: #{init_options.to_h.inspect}")
+      self.init_options.publishing.destination = ask("What is the destination folder for the published site?", default: "docs")
 
       puts init_options.to_h.to_yaml
       unless yes?("Is this correct?", :red)
@@ -75,8 +75,19 @@ module JekyllRevealGenerator
       empty_directory(init_options.folder, config)
       destination_root = init_options.folder
       directory("presentation", init_options.folder, config)
-
     end
+
+    def initialize_presentation
+      Bundler.with_clean_env do
+        inside(init_options.folder) do
+          run 'git init'
+          run 'sh setup.sh'
+          run 'git add --all -v'
+          run 'git commit -m "Initial Commit"'
+        end
+      end
+    end
+
 
   end
 

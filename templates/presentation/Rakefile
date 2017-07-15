@@ -3,3 +3,9 @@ desc "Run the jekyll development server"
 task :serve do |t|
   sh 'bundle exec jekyll serve --config=_config.yml'
 end
+
+
+desc "Build the published version"
+task :publish do |t|
+  sh 'bundle exec jekyll build --config=_config.yml,_publish.yml'
+end

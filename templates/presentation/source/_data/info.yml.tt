@@ -1,0 +1,12 @@
+# -*- yaml -*-
+title: "<%= init_options.title %>"
+description: "<%= init_options.description %>"
+author:
+  name: "<%= init_options.author.name %>"
+  email: "<%= init_options.author.email %>"
+  twitter: "<%= init_options.author.twitter %>"
+  github: "<%= init_options.author.github %>"
+venue:
+  name: "<%= init_options.venue.name %>"
+  ssid: "<%= init_options.venue.ssid %>"
+  password: "<%= init_options.venue.password %>"

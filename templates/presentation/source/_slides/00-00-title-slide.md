@@ -2,11 +2,13 @@
 layout: slide
 ---
 
+
+
 <section>
 
-# {{ site.title }}
+# {{ site.data.info.title }}
 
-## {{ site.subtitle }}
+## {{ site.data.info.description }}
 
 
 [printed notes]({{ '/notes.html' | relative_url }}){:target="_blank" rel="noopenner noreferrer"}
@@ -27,9 +29,9 @@ layout: slide
 
 ## about me
 
-* {{site.author.name}}
-* {{site.author.email}}
-* Github: {{site.author.github}}
-* Twitter: @{{site.author.twitter}}
+* {{site.data.info.author.name}}
+* {{site.data.info.author.email}}
+* Github: {{site.data.info.author.github}}
+* Twitter: @{{site.data.info.author.twitter}}
 
 </section>
