@@ -1,0 +1,31 @@
+---
+layout: slide
+title: "<%= init_options.title %>"
+slug: "<%= init_options.slug %>"
+group: <%= init_options.group %>
+sequence: <%= init_options.sequence %>
+image:
+  src: "http://fillmurray.com/g/200/300"
+  alt: "fill murray 200x300"
+  title: "It's Fill Murray! 200 by 300"
+
+---
+
+
+<h3>{{ page.title }}</h3>
+
+<div class="two-up">
+  <div class="left">
+    <ul>
+      <li>text</li>
+      <li>text</li>
+      <li>text</li>
+    </ul>
+  </div>
+  <div class="right">
+    <figure>
+      <img alt="{{ page.image.alt }}" src="{{ page.image.src }}" title="{{ page.image.title }}"/>
+      <figcaption><p>{{ page.image.title }}</p></figcaption>
+    </figure>
+  </div>
+</div>

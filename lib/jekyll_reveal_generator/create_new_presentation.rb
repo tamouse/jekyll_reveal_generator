@@ -58,7 +58,7 @@ module JekyllRevealGenerator
         $logger.error("quitting, try again")
         exit -1;
       end
-      $logger.info("Creating site")
+      puts "Creating site"
     end
 
     def self.source_root

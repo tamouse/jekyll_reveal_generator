@@ -1,4 +1,3 @@
-# -*- yaml -*-
 title: "<%= init_options.title %>"
 description: "<%= init_options.description %>"
 author:

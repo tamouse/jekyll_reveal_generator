@@ -1,13 +1,21 @@
 require "bundler/gem_tasks"
-require "rake/testtask"
 
-Rake::TestTask.new(:test) do |t|
-  t.libs << "test"
-  t.libs << "lib"
-  t.test_files = FileList['test/**/*_test.rb']
+begin
+  require 'rspec/core/rake_task'
+  RSpec::Core::RakeTask.new(:spec)
+
+  require 'cucumber'
+  require 'cucumber/rake/task'
+
+  Cucumber::Rake::Task.new(:features) do |t|
+    t.cucumber_opts = "features --format pretty"
+  end
+
+  task :default => [:spec, :features]
+
+rescue LoadError
+  $stderr.puts "Could not load Cucumber"
 end
-
-task :default => :test
 
 task :serve do |t|
   sh 'bundle exec jekyll serve'

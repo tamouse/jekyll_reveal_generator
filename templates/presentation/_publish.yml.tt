@@ -1,4 +1,3 @@
-# -*- yaml -*-
 url: "<%= init_options.publishing.site_url %>"
 baseurl: "<%= init_options.publishing.base_url %>"
 destination: "<%= init_options.publishing.destination %>"
