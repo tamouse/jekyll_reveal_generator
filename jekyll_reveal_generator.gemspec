@@ -37,8 +37,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "cucumber"
   spec.add_development_dependency "aruba", "~> 1.0.0-alpha.2"
   spec.add_development_dependency "rspec"
+  spec.add_development_dependency "faker"
   spec.add_development_dependency "pry-byebug"
-  spec.add_development_dependency "pry-nav"
-
 
 end

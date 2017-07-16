@@ -1,9 +1,9 @@
 ---
 layout: slide
-title: "<%= init_options.title %>"
-slug: "<%= init_options.slug %>"
-group: <%= init_options.group %>
-sequence: <%= init_options.sequence %>
+title: "<%= slide_options.title %>"
+slug: "<%= slide_options.slug %>"
+group: <%= slide_options.group %>
+sequence: <%= slide_options.sequence %>
 image:
   src: "http://fillmurray.com/200/300"
   alt: "fill murray 200x300"

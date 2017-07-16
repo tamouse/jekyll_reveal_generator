@@ -5,12 +5,11 @@ module JekyllRevealGenerator
   module Utils
 
     def slide_slug(o)
-      pattern = "%02d-%02d-%s.%s"
+      pattern = "%02d-%02d-%s"
       pattern % [
         o.group.to_i,
         o.sequence.to_i,
-        o.title.downcase.gsub(/[^[:alnum:]]+/,'-'),
-        o.format
+        o.title.downcase.gsub(/[^[:alnum:]]+/,'-')
       ]
     end
 
@@ -22,17 +21,19 @@ module JekyllRevealGenerator
       file.to_s.split("-")[1].to_i
     end
 
-    def last_slide_group
-      slide_files
+    def last_slide_group(files=nil)
+      files ||= slide_files
+      files
         .map{|file| group_num(file) }
         .uniq.sort.last
     end
 
-    def last_slide_sequence(group)
-      slide_files
+    def last_slide_sequence(group, files=nil)
+      files ||= slide_files
+      files
         .reject{|file| group != group_num(file) }
         .map{|file| sequence_num(file)}
-        .uniq.sort.last
+        .uniq.sort.last || -1
     end
 
     def slides
@@ -41,10 +42,11 @@ module JekyllRevealGenerator
 
     def slide_files
       @slide_files ||= slides.children
+        .map{|f| f.basename}
     end
 
     def source
-      @source ||= root_dir.expand_path('../source')
+      @source ||= root_dir.join("source")
     end
 
     def root_dir(dir=nil)
