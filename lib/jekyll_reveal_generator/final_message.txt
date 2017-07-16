@@ -1,0 +1,34 @@
+
+Congratulations, your new presentation is now ready
+for editing.
+
+You can start up a server that will point to http://localhost:4000
+
+    cd #{init_options.folder}
+    bin/rake serve
+
+If you add any node.js components, you can add to the setup.sh
+script, it would be a good place to add the "npm install" or
+"yarn" command.
+
+I've already performed the initial git commit. You should keep
+committing changes as you go along.
+
+The "_publish.yml" file is used to modify the links and the
+destination directory for publishing. This is mainly set up
+for publishing to github pages using the "docs/" directory on
+the master branch. If you want to go this way, the "_publish.yml"
+file settings should be something like:
+
+    url: "https://YOURGITHUB.github.io"
+    baseurl: "/REPO_NAME"
+    destination: docs
+
+In the REPO_NAME settings you can specify the location for
+your github pages.
+
+When you want to add slides, you can run "jrg" from the
+presentation root and answer the questions.
+
+    cd #{init_options.folder}
+    jrg slide

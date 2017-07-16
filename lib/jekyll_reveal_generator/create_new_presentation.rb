@@ -78,16 +78,30 @@ module JekyllRevealGenerator
     end
 
     def initialize_presentation
-      Bundler.with_clean_env do
-        inside(init_options.folder) do
-          run 'git init'
-          run 'sh setup.sh'
-          run 'git add --all -v'
-          run 'git commit -m "Initial Commit"'
+      if defined? Bundler
+        Bundler.with_clean_env do
+          run_initial_directory_setup
         end
+      else
+        run_initial_directory_setup
       end
     end
 
+    def final_message
+      msg = File.read(File.expand_path("../final_message.txt", __FILE__))
+      say(msg, :green)
+    end
+
+    private
+
+    def run_initial_directory_setup
+      inside(init_options.folder) do
+        run 'git init'
+        run 'sh setup.sh'
+        run 'git add --all -v'
+        run 'git commit -m "Initial Commit"'
+      end
+    end
 
   end
 
