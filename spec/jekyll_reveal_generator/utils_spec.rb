@@ -31,7 +31,7 @@ RSpec.describe JekyllRevealGenerator::DummyTestClass do
     context "difficult title" do
       it "returns the expected slug" do
         options.title = "LINK: This should pay $$$ ?!?!? "
-        expected = "00-01-link-this-should-pay-"
+        expected = "00-01-link-this-should-pay"
         actual = subject.slide_slug(options)
         expect(actual).to eq(expected)
       end

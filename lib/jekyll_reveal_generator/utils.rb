@@ -9,7 +9,9 @@ module JekyllRevealGenerator
       pattern % [
         o.group.to_i,
         o.sequence.to_i,
-        o.title.downcase.gsub(/[^[:alnum:]]+/,'-')
+        o.title.downcase
+          .gsub(/[^[:alnum:]]+/,'-')
+          .sub(/-+\z/,'')
       ]
     end
 

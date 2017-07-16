@@ -13,13 +13,13 @@ Feature: Create a New Slide
     And I type ""
     And I type "markdown"
     And I type "multi"
-    Then the file named "source/_slides/01-00-welcome-to-my-presentation-.markdown" should exist
-    And the file "source/_slides/01-00-welcome-to-my-presentation-.markdown" should contain:
+    Then the file named "source/_slides/01-00-welcome-to-my-presentation.markdown" should exist
+    And the file "source/_slides/01-00-welcome-to-my-presentation.markdown" should contain:
     """
     ---
     layout: slide
     title: "Welcome to my Presentation!"
-    slug: "01-00-welcome-to-my-presentation-"
+    slug: "01-00-welcome-to-my-presentation"
     group: 1
     sequence: 0
     ---
