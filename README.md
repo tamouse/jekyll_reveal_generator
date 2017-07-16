@@ -2,6 +2,12 @@
 
 Generate Jekyll-Reveal.js Slide Presentations
 
+You should be familiar with [Jekyll] and [Reveal] to use this generator
+effectively.
+
+[Jekyll]: http://jekyllrb.com "The blog-aware static site generator"
+[Reveal]: http://lab.hakim.se/reveal-js/#/ "The HTML presentation framework"
+
 ## Installation
 
 Install it yourself as:
@@ -10,11 +16,40 @@ Install it yourself as:
 
 ## Usage
 
-	$ jekyll_reveal_generator help
+  	$ jekyll_reveal_generator help
+
+or
+
+    $ jrg help
+
+To create a new presentation, use `init`:
+
+    $ jrg init my_prez
+
+and answer the prompts. This will run the `setup.sh` script and
+initialize a git repository and make the first commit.
+
+To create a slide, from the presentation root directory, run:
+
+    $ cd my_pres
+    $ jrg slide
+
+and answer the prompts.
+
+The included Rakefile has two tasks, `serve` and `publish`:
+
+* `serve` launches the jekyll server on port 4000
+* `publish` builds the presentation adding the `_publish.yml`
+  configuration to the normal configuration
 
 ## Templates
 
-The slide presentation templates are in the `templates/` directory.
+The slide presentation template is in the `templates/presentation/`
+directory.
+
+The new slide templates are in `templates/slides`
+
+There is no provision for adding or modifying the templates.
 
 ## Development
 
@@ -29,9 +64,15 @@ install`. To release a new version, update the version number in
 create a git tag for the version, push git commits and tags, and push
 the `.gem` file to [rubygems.org](https://rubygems.org).
 
+This gem utilizes [Thor] as a generator.
+
 ## Testing
 
-We are using `minitest` to drive testing of the generator.
+Testing is using [RSpec] for unit testing, and [Aruba] for
+command-line testing.
+
+[RSpec]: http://rspec.info/ "Behavior-Driven Development for Ruby. Making TDD Productive and Fun"
+[Aruba]: https://github.com/cucumber/aruba "Test command-line applications with Cucumber-Ruby, Rspec, or Minitest"
 
 ## Contributing
 
