@@ -31,7 +31,7 @@ initialize a git repository and make the first commit.
 
 To create a slide, from the presentation root directory, run:
 
-    $ cd my_pres
+    $ cd my_prez
     $ jrg slide
 
 and answer the prompts.
